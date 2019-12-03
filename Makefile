@@ -1,5 +1,5 @@
 PKG_NAME := pyxattr
-URL = https://files.pythonhosted.org/packages/36/1d/1a5f3165f330e1a0427636f2bd995dbcc02d0f7660e89458d64806a2ed1e/pyxattr-0.6.1.tar.gz
+URL = https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

@@ -6,10 +6,10 @@
 #
 Name     : pyxattr
 Version  : 0.7.1
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz
-Source1 : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz.asc
+Source1  : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz.asc
 Summary  : A python extension module that allows you to manipulate the extended attributes.
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -20,10 +20,9 @@ BuildRequires : buildreq-distutils3
 BuildRequires : python3-dev
 
 %description
-# pyxattr
-This is the pyxattr module, a Python extension module which gives access
-to the extended attributes for filesystem objects available in some
-operating systems.
+This is a C extension module for Python which
+implements extended attributes manipulation. It is a wrapper on top
+of the attr C library - see attr(5).
 
 %package license
 Summary: license components for the pyxattr package.
@@ -46,6 +45,7 @@ python components for the pyxattr package.
 Summary: python3 components for the pyxattr package.
 Group: Default
 Requires: python3-core
+Provides: pypi(pyxattr)
 
 %description python3
 python3 components for the pyxattr package.
@@ -60,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575395325
+export SOURCE_DATE_EPOCH=1583217420
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "

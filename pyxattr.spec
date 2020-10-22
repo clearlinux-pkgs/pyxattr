@@ -6,11 +6,11 @@
 #
 Name     : pyxattr
 Version  : 0.7.1
-Release  : 11
+Release  : 12
 URL      : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz
 Source1  : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz.asc
-Summary  : A python extension module that allows you to manipulate the extended attributes.
+Summary  : Filesystem extended attributes for python
 Group    : Development/Tools
 License  : LGPL-2.1
 Requires: pyxattr-license = %{version}-%{release}
@@ -20,9 +20,8 @@ BuildRequires : buildreq-distutils3
 BuildRequires : python3-dev
 
 %description
-This is a C extension module for Python which
 implements extended attributes manipulation. It is a wrapper on top
-of the attr C library - see attr(5).
+        of the attr C library - see attr(5).
 
 %package license
 Summary: license components for the pyxattr package.
@@ -60,12 +59,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583217420
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603402866
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build

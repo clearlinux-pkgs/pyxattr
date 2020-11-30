@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF66E3E419F84F4DE (iusty@k1024.org)
 #
 Name     : pyxattr
-Version  : 0.7.1
-Release  : 12
-URL      : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz
-Source1  : https://files.pythonhosted.org/packages/cf/b1/7ed931d98b5a91a59b69fcc2860e5b720a22ed1ddb85268415181c9b0986/pyxattr-0.7.1.tar.gz.asc
+Version  : 0.7.2
+Release  : 14
+URL      : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz
+Source1  : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz.asc
 Summary  : Filesystem extended attributes for python
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -17,7 +17,6 @@ Requires: pyxattr-license = %{version}-%{release}
 Requires: pyxattr-python = %{version}-%{release}
 Requires: pyxattr-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : python3-dev
 
 %description
 implements extended attributes manipulation. It is a wrapper on top
@@ -51,15 +50,15 @@ python3 components for the pyxattr package.
 
 
 %prep
-%setup -q -n pyxattr-0.7.1
-cd %{_builddir}/pyxattr-0.7.1
+%setup -q -n pyxattr-0.7.2
+cd %{_builddir}/pyxattr-0.7.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1603402866
+export SOURCE_DATE_EPOCH=1606768273
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -72,7 +71,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pyxattr
-cp %{_builddir}/pyxattr-0.7.1/COPYING %{buildroot}/usr/share/package-licenses/pyxattr/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/pyxattr-0.7.2/COPYING %{buildroot}/usr/share/package-licenses/pyxattr/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
